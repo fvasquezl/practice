@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\DataTable;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
-use Laravel\Ui\Presets\React;
+
 
 abstract class DataTableController extends Controller
 {
@@ -39,7 +39,6 @@ abstract class DataTableController extends Controller
                 'table' => $this->builder->getModel()->getTable(),
                 'displayable' => array_values($this->getDisplayableColumns()),
                 'updatable' => array_values($this->getUpdatableColumns()),
-                
                 'records' => $this->getRecords($request),
             ]
         ]);

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UserController extends DataTableController
 {
     public function builder()
     {
@@ -34,4 +34,5 @@ class UserController extends Controller
         ]);
         $this->builder->find($id)->update($request->only($this->getUpdatableColumns()));
     }
+
 }
